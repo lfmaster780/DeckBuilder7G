@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://resources/card.gd" type="Script" id=1]
-[ext_resource path="res://sprites/amazonas/23.png" type="Texture" id=2]
+[ext_resource path="res://sprites/amazonas/23.png" type="Texture" id=1]
+[ext_resource path="res://resources/card.gd" type="Script" id=2]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 ID = 23
 Nome = "Alessa Chronis"
 Tipo = "Criatura"
@@ -27,4 +27,4 @@ Voador = false
 SuperVelocidade = false
 Teletransporte = false
 EspecialID = 0
-textura = ExtResource( 2 )
+textura = ExtResource( 1 )

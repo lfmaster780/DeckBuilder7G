@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/amazonas/70.png" type="Texture" id=1]
+[ext_resource path="res://resources/card.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+ID = 70
+Nome = "Katherine Adamopoulos"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Humano", "Amazona", "Guerreira" )
+CustoNivel = 4
+Efeitos = PoolStringArray( "Destrua uma criatura N1, N2 ou N3 que esteja ao alcance desta." )
+TipoEfeitos = PoolStringArray( "Instatâneo" )
+CustoEnergia = PoolIntArray( 3 )
+Vida = 5
+Ataque = 7
+Escudo = 2
+ContraAtaque = 2
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 1 )

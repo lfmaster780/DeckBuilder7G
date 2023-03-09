@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/amazonas/39.png" type="Texture" id=1]
+[ext_resource path="res://resources/card.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+ID = 39
+Nome = "Amazonas Calouras"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Humano", "Amazona", "Defensora" )
+CustoNivel = 2
+Efeitos = PoolStringArray( "As forças deste card não podem ser aumentadas" )
+TipoEfeitos = PoolStringArray( "Infinito" )
+CustoEnergia = PoolIntArray( 0 )
+Vida = 6
+Ataque = 0
+Escudo = 2
+ContraAtaque = 1
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = true
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 1 )
