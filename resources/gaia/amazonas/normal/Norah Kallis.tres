@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/amazonas/67.png" type="Texture" id=1]
+[ext_resource path="res://resources/card.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+ID = 67
+Nome = "Norah Kallis"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Humano", "Amazona", "Guerreira" )
+CustoNivel = 2
+Efeitos = PoolStringArray( "Imobilize uma criatura inimiga por uma rodada (à criatura alvo não pode atacar nem se mover)." )
+TipoEfeitos = PoolStringArray( "Único" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 2
+Ataque = 4
+Escudo = 2
+ContraAtaque = 1
+Alcance = 2
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 1 )

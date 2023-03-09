@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/amazonas/55.png" type="Texture" id=1]
+[ext_resource path="res://resources/card.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+ID = 55
+Nome = "Jacee Loris"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Humano", "Amazona", "Guerreira" )
+CustoNivel = 2
+Efeitos = PoolStringArray( "Vigor (ocorre depois que esta criatura sobrevive ao derrotar um inimigo): Jacee Loris ganha +1 de vida" )
+TipoEfeitos = PoolStringArray( "Infinito" )
+CustoEnergia = PoolIntArray( 0 )
+Vida = 3
+Ataque = 4
+Escudo = 1
+ContraAtaque = 1
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = 4
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 1 )

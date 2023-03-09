@@ -1,22 +1,22 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://resources/card.gd" type="Script" id=1]
-[ext_resource path="res://sprites/amazonas/21.png" type="Texture" id=2]
+[ext_resource path="res://sprites/amazonas/27.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-ID = 21
-Nome = "Themis Althea"
+ID = 27
+Nome = "Agatha Petrides"
 Tipo = "Criatura"
 Filiacao = PoolStringArray( "Humano", "Amazona", "Guerreira" )
-CustoNivel = 1
-Efeitos = PoolStringArray( "Suas amazonas custam 1N a menos para serem invocadas neste turno, mas nunca zero." )
-TipoEfeitos = PoolStringArray( "Inteligente" )
-CustoEnergia = PoolIntArray( 2 )
+CustoNivel = 2
+Efeitos = PoolStringArray( "Conceda +1 de contra-ataque para sua outras amazonas que não sejam arqueiras." )
+TipoEfeitos = PoolStringArray( "Único" )
+CustoEnergia = PoolIntArray( 1 )
 Vida = 3
-Ataque = 2
+Ataque = 4
 Escudo = 1
-ContraAtaque = 1
+ContraAtaque = 2
 Alcance = 1
 Intuicao = false
 Agilidade = -1
