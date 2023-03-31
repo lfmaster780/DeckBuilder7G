@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/48.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 48
+Nome = "Phroniac"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
+CustoNivel = 3
+Efeitos = PoolStringArray( "Escolha um outro goldron em seu campo e uma criatura do oponente que tenha igual ou menor nível que a primeira criatura escolhida. Destrua ambas" )
+TipoEfeitos = PoolStringArray( "Instantânea" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 4
+Ataque = 6
+Escudo = 1
+ContraAtaque = 1
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 66
+textura = ExtResource( 2 )

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/14.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 14
+Nome = "Zardok"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
+CustoNivel = 3
+Efeitos = PoolStringArray( "Conceda +3 de ataque neste turno a um outro goldron guerrilheiro." )
+TipoEfeitos = PoolStringArray( "Único" )
+CustoEnergia = PoolIntArray( 1 )
+Vida = 3
+Ataque = 6
+Escudo = 2
+ContraAtaque = 1
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 51
+textura = ExtResource( 2 )

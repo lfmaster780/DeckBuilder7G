@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/6.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 6
+Nome = "Bauzz"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Atirador" )
+CustoNivel = 1
+Efeitos = PoolStringArray( "Bauzz tem +3 de ataque para atacar a fortaleza." )
+TipoEfeitos = PoolStringArray( "Infinito" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 2
+Ataque = 3
+Escudo = 2
+ContraAtaque = 0
+Alcance = 3
+Intuicao = true
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 2 )

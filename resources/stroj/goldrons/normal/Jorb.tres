@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/5.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 5
+Nome = "Jorb"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
+CustoNivel = 1
+Efeitos = PoolStringArray( "Quando um goldron que não seja sentinela for derrotado, ao invés de enviá-lo para derrotados restaure 1 de vida e conceda-lhe proteção máxima (não pode ser alvo de ataques e efeitos do oponente) até o final do turno." )
+TipoEfeitos = PoolStringArray( "Mão" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 3
+Ataque = 2
+Escudo = 1
+ContraAtaque = 1
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 2 )
