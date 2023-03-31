@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/3.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 3
+Nome = "Katarb"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
+CustoNivel = 1
+Efeitos = PoolStringArray( "Se seu oponente tiver mais criaturas que você em campo e declarar um ataque a fortaleza, invoque este card sem custo em um lugar que a criatura atacante alcance. Katarb será o novo alvo do ataque." )
+TipoEfeitos = PoolStringArray( "Mão" )
+CustoEnergia = PoolIntArray( 0 )
+Vida = 2
+Ataque = 2
+Escudo = 1
+ContraAtaque = 2
+Alcance = 2
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 2 )

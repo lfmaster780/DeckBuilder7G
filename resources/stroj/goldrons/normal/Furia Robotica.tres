@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/50.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 50
+Nome = "Fúria Robótica"
+Tipo = "Ação"
+Filiacao = PoolStringArray( "Manipulador" )
+CustoNivel = 0
+Efeitos = PoolStringArray( "+1 de ataque e Multiataque neste turno." )
+TipoEfeitos = PoolStringArray( "Instantâneo" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 0
+Ataque = 1
+Escudo = 0
+ContraAtaque = 0
+Alcance = 1
+Intuicao = false
+Agilidade = -1
+Multiataque = 5
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 2 )

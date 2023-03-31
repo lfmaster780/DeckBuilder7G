@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/2.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 2
+Nome = "Zagoc"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
+CustoNivel = 1
+Efeitos = PoolStringArray( "Proteção Máxima (não pode ser alvo de ataques e efeitos do oponente) por uma rodada", "Busque o equipamento \"Zagockranozz\" no seu deck especial e coloque-o na mão" )
+TipoEfeitos = PoolStringArray( "Instantâneo", "Último Golpe" )
+CustoEnergia = PoolIntArray( 0, 0 )
+Vida = 1
+Ataque = 3
+Escudo = 2
+ContraAtaque = 0
+Alcance = 1
+Intuicao = true
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = false
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 19
+textura = ExtResource( 2 )

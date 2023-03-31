@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/card.gd" type="Script" id=1]
+[ext_resource path="res://sprites/goldrons/42.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = 42
+Nome = "Orbtralzz"
+Tipo = "Criatura"
+Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Atirador" )
+CustoNivel = 1
+Efeitos = PoolStringArray( "Quando uma criatura ficar apta a atacar por meio de agilidade, desabilite essa habilidade do alvo" )
+TipoEfeitos = PoolStringArray( "Mão" )
+CustoEnergia = PoolIntArray( 0 )
+Vida = 2
+Ataque = 3
+Escudo = 1
+ContraAtaque = 0
+Alcance = 3
+Intuicao = false
+Agilidade = -1
+Multiataque = -1
+Oculto = false
+AlvoPrimario = false
+Voador = true
+SuperVelocidade = false
+Teletransporte = false
+EspecialID = 0
+textura = ExtResource( 2 )
