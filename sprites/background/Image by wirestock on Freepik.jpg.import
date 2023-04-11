@@ -14,8 +14,9 @@ dest_files=[ "res://.import/Image by wirestock on Freepik.jpg-e4a254506578d687dd
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.5
+
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

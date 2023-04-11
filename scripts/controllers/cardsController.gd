@@ -38,3 +38,11 @@ static func loadItems(folderPath : String) -> Array:
 		item_resources.append(load(path))
 
 	return item_resources
+	
+func buscarID(id:int,lista) -> Card:
+	for elemento in lista:
+		print("Elmento ",elemento.ID," checado!")
+		if elemento.ID == id:
+			return elemento
+	
+	return null
