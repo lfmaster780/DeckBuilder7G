@@ -9,15 +9,15 @@ var especial : Card
 
 func _ready():
 	#Especifico para teste
-	###
-	#randomize()
-	#var indice_aleatorio = randi() % CardsController.listaStroj.size()
-	#print(indice_aleatorio)
-	#indice_aleatorio = 3 #Especifico para teste
-	#filiacao = "Stroj"
-	#carta = CardsController.listaStroj[indice_aleatorio]
-	#$CardSprite.texture = carta.textura
-	###
+	
+	randomize()
+	var indice_aleatorio = randi() % CardsController.listaStroj.size()
+	print(indice_aleatorio)
+	indice_aleatorio = 3 #Especifico para teste
+	filiacao = "Stroj"
+	carta = CardsController.listaStroj[indice_aleatorio]
+	$CardSprite.texture = carta.textura
+	
 	if carta.EspecialID > 0:
 		if filiacao.to_upper() == "STROJ":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
@@ -48,3 +48,13 @@ func _on_VerEspecialButton_toggled(button_pressed):
 		$CardSprite.texture = especial.textura
 	else:
 		$CardSprite.texture = carta.textura
+
+
+func _on_ButtonRetirar_pressed():
+	var result = int($LabelQuantidade.text) - 1
+	$LabelQuantidade.text = str(result)
+
+
+func _on_ButtonAdd_pressed():
+	var result = int($LabelQuantidade.text) + 1
+	$LabelQuantidade.text = str(result)

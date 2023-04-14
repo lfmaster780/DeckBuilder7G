@@ -14,3 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_NovoDeckButton_pressed():
+	get_tree().change_scene("res://scenes/Tela Deck.tscn")

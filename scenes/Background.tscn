@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/background/Image by wirestock on Freepik.jpg" type="Texture" id=1]
+[ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Background" type="Sprite"]
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Creditos" type="Label" parent="."]
+margin_left = 57.7778
+margin_top = 11.1111
+margin_right = 360.778
+margin_bottom = 47.1111
+custom_fonts/font = SubResource( 1 )
+text = "Image by wirestock on Freepik"
