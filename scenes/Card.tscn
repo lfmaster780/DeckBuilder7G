@@ -26,4 +26,3 @@ custom_fonts/font = SubResource( 1 )
 text = "Ver Especial"
 
 [connection signal="toggled" from="VerEspecialButton" to="." method="_on_VerEspecialButton_toggled"]
-
