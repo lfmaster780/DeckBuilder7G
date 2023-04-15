@@ -4,7 +4,6 @@ extends Node2D
 var carta : Card
 var filiacao : String
 var especial : Card
-
 #
 
 func _ready():
@@ -12,7 +11,6 @@ func _ready():
 	
 	randomize()
 	var indice_aleatorio = randi() % CardsController.listaStroj.size()
-	print(indice_aleatorio)
 	indice_aleatorio = 3 #Especifico para teste
 	filiacao = "Stroj"
 	carta = CardsController.listaStroj[indice_aleatorio]
@@ -57,4 +55,18 @@ func _on_ButtonRetirar_pressed():
 
 func _on_ButtonAdd_pressed():
 	var result = int($LabelQuantidade.text) + 1
-	$LabelQuantidade.text = str(result)
+	get_parent().get_parent().adicao(carta)
+	atualizar()
+	
+func atualizar():
+	$LabelQuantidade.text = str(DeckController.quantidade(carta))
+	$CardSprite.texture = carta.textura
+	if carta.EspecialID > 0:
+		#Se tiver, é feita a checagem de filiacao | carrega os dados e torna botao de card especial visivel
+		if filiacao.to_upper() == "STROJ":
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
+		else:
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
+		$VerEspecialButton.visible = true
+	else:
+		$VerEspecialButton.visible = false
