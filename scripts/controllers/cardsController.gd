@@ -15,6 +15,8 @@ func _ready():
 	listaGaiaEspecial = loadItems("res://resources/gaia/amazonas/especial/")
 	listaStroj = loadItems("res://resources/stroj/goldrons/normal/")
 	listaStrojEspecial = loadItems("res://resources/stroj/goldrons/especial/")
+	print(listaGaiaEspecial.size())
+	print(buscarID(39,listaGaiaEspecial).ID)
 	
 static func loadItems(folderPath : String) -> Array:
 	var item_files := []

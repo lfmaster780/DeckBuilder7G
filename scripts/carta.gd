@@ -9,20 +9,20 @@ var especial : Card
 func _ready():
 	#Especifico para teste
 	
-	randomize()
-	var indice_aleatorio = randi() % CardsController.listaStroj.size()
-	indice_aleatorio = 3 #Especifico para teste
-	filiacao = "Stroj"
-	carta = CardsController.listaStroj[indice_aleatorio]
-	$CardSprite.texture = carta.textura
+	#randomize()
+	#var indice_aleatorio = randi() % CardsController.listaStroj.size()
+	#indice_aleatorio = 3 #Especifico para teste
+	#filiacao = "Stroj"
+	#carta = CardsController.listaStroj[indice_aleatorio]
+	#$CardSprite.texture = carta.textura
 	
-	if carta.EspecialID > 0:
-		if filiacao.to_upper() == "STROJ":
-			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
-		else:
-			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
-		$VerEspecialButton.visible = true
-		
+	#if carta.EspecialID > 0:
+		#if filiacao.to_upper() == "STROJ":
+			#especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
+		#else:
+			#especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
+		#$VerEspecialButton.visible = true
+	pass
 
 func inicializar(index:int,filiacao:String):
 	#Seta a filiação da carta
@@ -50,7 +50,8 @@ func _on_VerEspecialButton_toggled(button_pressed):
 
 func _on_ButtonRetirar_pressed():
 	var result = int($LabelQuantidade.text) - 1
-	$LabelQuantidade.text = str(result)
+	get_parent().get_parent().retirar(carta)
+	atualizar()
 
 
 func _on_ButtonAdd_pressed():
@@ -58,14 +59,33 @@ func _on_ButtonAdd_pressed():
 	get_parent().get_parent().adicao(carta)
 	atualizar()
 	
-func atualizar():
+func atualizar(mode = 1):
+	#mode 0 quer dizer card nulo e 1 card normal
+	if mode == 0:
+		self.visible = false
+		return
+	
+	self.visible = true
+	
 	$LabelQuantidade.text = str(DeckController.quantidade(carta))
 	$CardSprite.texture = carta.textura
+	filiacao = DeckController.galaxia
+	
+	if int($LabelQuantidade.text) == 0:
+		$ButtonRetirar.visible = false
+		$ButtonAdd.visible = true
+	elif int($LabelQuantidade.text) == 1:
+		$ButtonRetirar.visible = true
+		$ButtonAdd.visible = true
+	else:
+		$ButtonRetirar.visible = true
+		$ButtonAdd.visible = false
+	
 	if carta.EspecialID > 0:
 		#Se tiver, é feita a checagem de filiacao | carrega os dados e torna botao de card especial visivel
 		if filiacao.to_upper() == "STROJ":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
-		else:
+		elif filiacao.to_upper() == "GAIA":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
 		$VerEspecialButton.visible = true
 	else:

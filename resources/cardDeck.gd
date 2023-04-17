@@ -17,4 +17,4 @@ func adicionar():
 func retirar():
 	quantidade -= 1
 	if quantidade <= 0:
-		emit_signal("Zerado")
+		return 0

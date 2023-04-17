@@ -17,10 +17,15 @@ func inicializar(carta : Card):
 func adicionar():
 	quantidade += 1
 	$HBoxContainer/LabelQuantidade.text = str(quantidade)
-	
+
+func retirar():
+	quantidade -= 1
+	if quantidade < 1:
+		queue_free()
+	$HBoxContainer/LabelQuantidade.text = str(quantidade)
 	
 func _on_ActionButtonCarta_pressed():
-	print("pressed")
+	get_parent().get_parent().retirar(card)
 
 
 func _on_ActionButtonCarta_mouse_entered():
