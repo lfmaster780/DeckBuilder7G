@@ -41,7 +41,6 @@ static func loadItems(folderPath : String) -> Array:
 	
 func buscarID(id:int,lista) -> Card:
 	for elemento in lista:
-		print("Elmento ",elemento.ID," checado!")
 		if elemento.ID == id:
 			return elemento
 	
