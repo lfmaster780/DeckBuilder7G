@@ -4,12 +4,14 @@ var card : Card
 var quantidade : int
 var ID : int
 
+signal destaque(carta)
+
 func _ready():
 	pass
 
-func inicializar(carta : Card):
+func inicializar(carta : Card,qtd := 1):
 	card = carta
-	quantidade = 1
+	quantidade = qtd
 	ID = card.ID
 	$HBoxContainer/LabelNome.text = card.Nome
 	$HBoxContainer/LabelQuantidade.text = str(quantidade)
@@ -29,8 +31,9 @@ func _on_ActionButtonCarta_pressed():
 
 
 func _on_ActionButtonCarta_mouse_entered():
-	print("Mouse dentro")
+	emit_signal("destaque",card)
 
 
 func _on_ActionButtonCarta_mouse_exited():
-	print("Mouse fora")
+	#por enquanto sem uso
+	pass

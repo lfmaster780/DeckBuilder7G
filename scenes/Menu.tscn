@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Light.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 46
@@ -17,23 +18,29 @@ size = 40
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=4]
-size = 24
+size = 26
 outline_size = 1
 outline_color = Color( 0.392157, 0.0156863, 0.647059, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
+size = 28
 use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 2 )
+size = 22
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 20
+size = 32
 use_filter = true
 font_data = ExtResource( 2 )
 
@@ -53,62 +60,85 @@ custom_fonts/font = SubResource( 2 )
 text = "Seven Galaxies Deck Builder"
 align = 1
 
-[node name="NovoDeckButton" type="Button" parent="."]
+[node name="Botoes" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 940.0
-margin_top = 353.0
-margin_right = -826.0
-margin_bottom = -673.0
+margin_left = 614.0
+margin_top = 320.0
+margin_right = -597.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="NovoDeckButton" type="Button" parent="Botoes"]
+margin_right = 709.0
+margin_bottom = 54.0
 custom_fonts/font = SubResource( 3 )
 text = "Novo Deck"
 
+[node name="ContinuarButton" type="Button" parent="Botoes"]
+visible = false
+margin_top = 74.0
+margin_right = 709.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 8 )
+text = "Continuar Deck Atual"
+
+[node name="CarregarButton" type="Button" parent="Botoes"]
+margin_top = 74.0
+margin_right = 709.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 8 )
+text = "Carregar Deck Salvo"
+
 [node name="NovoDeckContainer" type="VBoxContainer" parent="."]
 visible = false
-margin_left = 1156.0
-margin_top = 275.0
-margin_right = 1391.0
-margin_bottom = 868.0
+margin_left = 1375.0
+margin_top = 282.0
+margin_right = 1776.0
+margin_bottom = 924.0
 custom_constants/separation = 10
 
 [node name="Label" type="Label" parent="NovoDeckContainer"]
-margin_right = 235.0
-margin_bottom = 30.0
+margin_right = 401.0
+margin_bottom = 32.0
 custom_fonts/font = SubResource( 4 )
 text = "Novo DecK:"
 align = 1
 
 [node name="LineEdit" type="LineEdit" parent="NovoDeckContainer"]
-margin_top = 40.0
-margin_right = 235.0
-margin_bottom = 74.0
+margin_top = 42.0
+margin_right = 401.0
+margin_bottom = 87.0
 custom_fonts/font = SubResource( 6 )
 text = "Nome do Deck"
+max_length = 32
 
 [node name="LabelNomeValido" type="Label" parent="NovoDeckContainer"]
-margin_top = 84.0
-margin_right = 235.0
-margin_bottom = 104.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin_top = 97.0
+margin_right = 401.0
+margin_bottom = 124.0
 custom_fonts/font = SubResource( 7 )
 align = 1
 
 [node name="ButtonGaia" type="Button" parent="NovoDeckContainer"]
-margin_top = 114.0
-margin_right = 235.0
-margin_bottom = 144.0
+margin_top = 134.0
+margin_right = 401.0
+margin_bottom = 179.0
 custom_fonts/font = SubResource( 5 )
 text = "Gaia"
 icon_align = 1
 
 [node name="ButtonStroj" type="Button" parent="NovoDeckContainer"]
-margin_top = 154.0
-margin_right = 235.0
-margin_bottom = 184.0
+margin_top = 189.0
+margin_right = 401.0
+margin_bottom = 234.0
 custom_fonts/font = SubResource( 5 )
 text = "Stroj"
 icon_align = 1
 
-[connection signal="pressed" from="NovoDeckButton" to="." method="_on_NovoDeckButton_pressed"]
+[connection signal="pressed" from="Botoes/NovoDeckButton" to="." method="_on_NovoDeckButton_pressed"]
+[connection signal="pressed" from="Botoes/ContinuarButton" to="." method="_on_ContinuarButton_pressed"]
+[connection signal="text_changed" from="NovoDeckContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonGaia" to="." method="_on_ButtonGaia_pressed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonStroj" to="." method="_on_ButtonStroj_pressed"]

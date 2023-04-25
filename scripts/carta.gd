@@ -5,6 +5,7 @@ var carta : Card
 var filiacao : String
 var especial : Card
 #
+signal clicado(carta)
 
 func _ready():
 	#Especifico para teste
@@ -90,3 +91,9 @@ func atualizar(mode = 1):
 		$VerEspecialButton.visible = true
 	else:
 		$VerEspecialButton.visible = false
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	var i = 1
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		emit_signal("clicado",self.carta)
