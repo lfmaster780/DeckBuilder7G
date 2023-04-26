@@ -29,7 +29,6 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="CardSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardSprite/Area2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="VerEspecialButton" type="CheckButton" parent="."]

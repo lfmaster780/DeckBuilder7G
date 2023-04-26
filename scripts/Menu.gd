@@ -7,14 +7,24 @@ var nomeDeckRegex := RegEx.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	nomeDeckRegex.compile("^[\\p{L}]+(\\s[\\p{L}]+)*$")
+	# Regex que define que um nome precisa ter cadeia de qualquer tamnho caracteres
+	# unicode ou número, podendo ser separados por um espaço em branco
+	nomeDeckRegex.compile("^[\\p{L}0-9]+(\\s[\\p{L}0-9]+)*$")
 	
+	#Se o deck atual na memória não estiver vazio, há opção de continuar de onde parou
 	if DeckController.deck.size() > 0:
 		$Botoes/ContinuarButton.visible = true
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		
+
 func validarNome():
+	#Checar se já tem um deck salvo com o mesmo nome
+	for save in AppController.saves:
+		if save == ($NovoDeckContainer/LineEdit.text + ".deck"):
+			$NovoDeckContainer/LabelNomeValido.modulate = VERMELHO
+			$NovoDeckContainer/LabelNomeValido.text = "Nome Inválido"
+			return false
+		
+	#checar se não é vazio e se é válida pela "Regex" definida no início (ready)
 	if (nomeDeckRegex.search($NovoDeckContainer/LineEdit.text) != null) and ($NovoDeckContainer/LineEdit.text != ""):
 		$NovoDeckContainer/LabelNomeValido.modulate = VERDE
 		$NovoDeckContainer/LabelNomeValido.text = "Nome Válido"
@@ -51,4 +61,14 @@ func _on_LineEdit_text_changed(new_text):
 
 
 func _on_ContinuarButton_pressed():
+	get_tree().change_scene("res://scenes/Tela Deck.tscn")
+
+
+func _on_CarregarButton_pressed():
+	$FileDialog.popup()
+
+
+func _on_FileDialog_file_selected(path):
+	print("Arquivo: ",path)
+	DeckController.carregar(path)
 	get_tree().change_scene("res://scenes/Tela Deck.tscn")

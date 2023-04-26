@@ -20,3 +20,12 @@ margin_right = 360.778
 margin_bottom = 47.1111
 custom_fonts/font = SubResource( 1 )
 text = "Image by wirestock on Freepik"
+
+[node name="CreditosDeckBuilder" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 2354.11
+margin_right = 4249.0
+margin_bottom = 2405.11
+custom_fonts/font = SubResource( 1 )
+text = "7G Deck Builder © 2023 by Luís Filipe Santos Seixas, Anu Game Studio is licensed under CC BY-SA 4.0."
+align = 2

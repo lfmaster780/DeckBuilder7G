@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Card.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://fonts/static/SofiaSansCondensed-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/static/SofiaSansCondensed-Bold.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://scenes/Stats.tscn" type="PackedScene" id=11]
+[ext_resource path="res://themes/fileDiologTheme.tres" type="Theme" id=12]
 
 [sub_resource type="DynamicFont" id=6]
 size = 36
@@ -190,9 +191,9 @@ text = "0"
 
 [node name="VBoxContainerPagina" type="VBoxContainer" parent="."]
 margin_left = 1438.0
-margin_top = 1003.0
+margin_top = 972.0
 margin_right = 1571.0
-margin_bottom = 1075.0
+margin_bottom = 1044.0
 
 [node name="HBoxContainerPagina" type="HBoxContainer" parent="VBoxContainerPagina"]
 margin_right = 133.0
@@ -279,6 +280,20 @@ scale = Vector2( 0.5, 0.973148 )
 z_index = -4
 texture = ExtResource( 8 )
 
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 1012.0
+margin_top = 381.0
+margin_right = 1712.0
+margin_bottom = 897.0
+theme = ExtResource( 12 )
+window_title = "Selecione a Pasta que Deseja Salvar o Deck"
+mode_overrides_title = false
+mode = 2
+access = 2
+filters = PoolStringArray( "*.deck" )
+
 [connection signal="pressed" from="VBoxContainerPagina/HBoxContainerBotoes/ButtonPrevious" to="." method="_on_ButtonPrevious_pressed"]
 [connection signal="pressed" from="VBoxContainerPagina/HBoxContainerBotoes/ButtonNext" to="." method="_on_ButtonNext_pressed"]
+[connection signal="pressed" from="HBoxContainerOpções/ButtonSalvar" to="." method="salvar"]
 [connection signal="pressed" from="HBoxContainerOpções/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]

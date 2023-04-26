@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://fonts/static/SofiaSansCondensed-Light.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://themes/fileDiologTheme.tres" type="Theme" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 46
@@ -137,8 +138,23 @@ custom_fonts/font = SubResource( 5 )
 text = "Stroj"
 icon_align = 1
 
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 505.0
+margin_top = 269.0
+margin_right = 1495.0
+margin_bottom = 989.0
+theme = ExtResource( 6 )
+window_title = "Selecione um deck para abrir"
+resizable = true
+mode_overrides_title = false
+mode = 0
+access = 2
+filters = PoolStringArray( "*.deck" )
+
 [connection signal="pressed" from="Botoes/NovoDeckButton" to="." method="_on_NovoDeckButton_pressed"]
 [connection signal="pressed" from="Botoes/ContinuarButton" to="." method="_on_ContinuarButton_pressed"]
+[connection signal="pressed" from="Botoes/CarregarButton" to="." method="_on_CarregarButton_pressed"]
 [connection signal="text_changed" from="NovoDeckContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonGaia" to="." method="_on_ButtonGaia_pressed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonStroj" to="." method="_on_ButtonStroj_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

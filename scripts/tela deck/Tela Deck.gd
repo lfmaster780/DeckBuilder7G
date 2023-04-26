@@ -155,6 +155,10 @@ func destacar(carta : Card):
 	
 	$CardDestaque.texture = carta.textura
 	var descricao := "[fill]"
+	descricao += str(carta.Nome)+" | "
+	#formatar a primeira linha com nome e atributos
+	var desc = "V:%d AT:%d E:%d CA:%d AL:%d\n\n" % [carta.Vida,carta.Ataque,carta.Escudo,carta.ContraAtaque,carta.Alcance]
+	descricao += desc
 	for k in range(carta.Efeitos.size()):
 		if carta.CustoEnergia[k] < 0:
 			descricao += "[b]"+"X"+"[/b] "
@@ -167,3 +171,11 @@ func destacar(carta : Card):
 	descricao += "[/fill]"
 	
 	$DescricaoLabel.bbcode_text = descricao
+	
+func salvar():
+	$FileDialog.popup()
+
+
+func _on_FileDialog_dir_selected(dir):
+	print(dir)
+	DeckController.salvar(dir+"/")
