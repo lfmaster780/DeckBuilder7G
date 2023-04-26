@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Card",
 "language": "GDScript",
 "path": "res://resources/card.gd"
+}, {
+"base": "Resource",
+"class": "Carta",
+"language": "GDScript",
+"path": "res://resources/cardDeck.gd"
 } ]
 _global_script_class_icons={
-"Card": ""
+"Card": "",
+"Carta": ""
 }
 
 [application]
@@ -26,7 +32,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
+AppController="*res://scripts/controllers/AppController.gd"
 CardsController="*res://scripts/controllers/cardsController.gd"
+DeckController="*res://scripts/controllers/deckController.gd"
 
 [display]
 

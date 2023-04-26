@@ -15,7 +15,7 @@ func _ready():
 	listaGaiaEspecial = loadItems("res://resources/gaia/amazonas/especial/")
 	listaStroj = loadItems("res://resources/stroj/goldrons/normal/")
 	listaStrojEspecial = loadItems("res://resources/stroj/goldrons/especial/")
-	
+
 static func loadItems(folderPath : String) -> Array:
 	var item_files := []
 	var items_folder := folderPath#"res://resources/gaia/amazonas/"
@@ -23,7 +23,7 @@ static func loadItems(folderPath : String) -> Array:
 	var directory := Directory.new()
 	var can_continue := directory.open(items_folder) == OK
 	if not can_continue:
-		print_debug('Could not open directory "%s"' % [items_folder])
+		print_debug('Não foi possível abrir "%s"' % [items_folder])
 		return item_files
 
 	directory.list_dir_begin(true, true)
@@ -41,7 +41,6 @@ static func loadItems(folderPath : String) -> Array:
 	
 func buscarID(id:int,lista) -> Card:
 	for elemento in lista:
-		print("Elmento ",elemento.ID," checado!")
 		if elemento.ID == id:
 			return elemento
 	

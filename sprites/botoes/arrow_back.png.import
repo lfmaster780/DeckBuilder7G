@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Image by wirestock on Freepik.jpg-e4a254506578d687ddc91c185f9c02a4.stex"
+path="res://.import/arrow_back.png-575deb5919026eb99a22816d8712e4c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/background/Image by wirestock on Freepik.jpg"
-dest_files=[ "res://.import/Image by wirestock on Freepik.jpg-e4a254506578d687ddc91c185f9c02a4.stex" ]
+source_file="res://sprites/botoes/arrow_back.png"
+dest_files=[ "res://.import/arrow_back.png-575deb5919026eb99a22816d8712e4c0.stex" ]
 
 [params]
 
-compress/mode=1
-compress/lossy_quality=0.5
+compress/mode=0
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
