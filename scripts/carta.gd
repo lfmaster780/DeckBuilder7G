@@ -64,8 +64,11 @@ func atualizar(mode = 1):
 	#mode 0 quer dizer card nulo e 1 card normal
 	if mode == 0:
 		self.visible = false
+		self.carta = null
 		return
 	
+	if self.carta == null:
+		return
 	self.visible = true
 	
 	$LabelQuantidade.text = str(DeckController.quantidade(carta))
