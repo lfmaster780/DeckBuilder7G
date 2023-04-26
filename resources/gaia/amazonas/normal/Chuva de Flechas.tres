@@ -1,18 +1,18 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://sprites/amazonas/38.png" type="Texture" id=1]
+[ext_resource path="res://sprites/amazonas/72.png" type="Texture" id=1]
 [ext_resource path="res://resources/card.gd" type="Script" id=2]
 
 [resource]
 script = ExtResource( 2 )
 ID = 38
-Nome = "União das Arqueiras"
-Tipo = "Estratégia"
+Nome = "Chuva de Flechas"
+Tipo = "Evento"
 Filiacao = PoolStringArray( "Amazona", "Arqueira" )
 CustoNivel = 0
-Efeitos = PoolStringArray( "Para cada amazona arqueira no seu campo, você pode causar 1 de dano penetrante a uma única criatura, onde \"X\" é igual a quantas arqueiras você usar neste efeito." )
-TipoEfeitos = PoolStringArray( "Inteligente" )
-CustoEnergia = PoolIntArray( -1 )
+Efeitos = PoolStringArray( "Cause 1 de dano penetrante a todas as criaturas inimigas. Se houver só uma ou nenhuma criatura no seu campo, cause 3 ao invés de 1." )
+TipoEfeitos = PoolStringArray( "Único" )
+CustoEnergia = PoolIntArray( 10 )
 Vida = 0
 Ataque = 0
 Escudo = 0

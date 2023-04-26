@@ -80,25 +80,33 @@ func inicializarNovo():
 				pagina.append(lista[k])
 				contador += 1
 			else:
+				
 				cards.append(pagina)
 				contador = 1
 				pagina = []
 				pagina.append(lista[k])
+		cards.append(pagina)
 				
 	elif galaxia.to_lower() == "gaia":
 		var lista = CardsController.listaGaia
+		print(lista.size())
 		var contador = 0
 		var pagina = []
 		for k in range(lista.size()):
 			if contador <= 5:
+				
 				pagina.append(lista[k])
 				contador += 1
 			else:
+				
 				cards.append(pagina)
 				contador = 1
 				pagina = []
 				pagina.append(lista[k])
-				
+		
+		cards.append(pagina)
+	
+	print("Num de paginas: ",cards.size())
 	$VBoxContainerPagina/HBoxContainerPagina/LabelPagFinal.text = str(cards.size())
 	novaPagina()
 	
@@ -127,9 +135,12 @@ func novaPagina(mode = 1):
 		
 		cardNodes[k].atualizar()
 	
-	var contador = cards[pagina].size()
-	while contador < 6:
-		cardNodes[contador].atualizar(0)
+	if dif == 0:
+		return
+		
+	for j in range(cards[pagina].size(),6):
+		cardNodes[j].atualizar(0)
+	
 
 func _on_ButtonNext_pressed():
 	if pagina < (cards.size()-1):
