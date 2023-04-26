@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 2 )
-ID = 38
+ID = 72
 Nome = "Chuva de Flechas"
 Tipo = "Evento"
 Filiacao = PoolStringArray( "Amazona", "Arqueira" )
