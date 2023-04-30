@@ -2,6 +2,7 @@ extends Node
 
 var saves := []
 const PATH = "user://Decks7G/"
+var inicializacao = true
 
 var diretorio := Directory.new()
 
@@ -10,6 +11,10 @@ func _ready():
 		print_debug("Não existe a pasta de decks")
 		diretorio.make_dir_recursive(PATH)
 		
+	var screen_size = OS.get_screen_size()
+	OS.window_size = Vector2(screen_size.x*0.7,screen_size.y*0.7)
+	
+	OS.window_maximized = true
 	carregarListaArquivos()
 
 func carregarListaArquivos():

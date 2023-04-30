@@ -1,8 +1,11 @@
 7G Deck Builder © 2023 by Luís Filipe Santos Seixas, Anu Game Studio is licensed under CC BY-SA 4.0.
  To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
 
+This Project uses Seven Galaxies Card images under this license:
+© 2022 7G Universe / Seven Galaxies. All rights reserved.
+
 This Project Uses Godot Engine under this license:
-Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md).
+Copyright (c) 2014-present Godot Engine contributors.
 Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

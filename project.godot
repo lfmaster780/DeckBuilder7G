@@ -27,8 +27,10 @@ _global_script_class_icons={
 [application]
 
 config/name="7G Deck Builder"
-run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/description="Construtor de deck para o card game brasileiro \"Seven Galaxies\". Atualmente na versão 1.0 é possível fazer decks para jogar o modo padrão \"União Planetárira\"."
+run/main_scene="res://scenes/Inicio.tscn"
+config/icon="res://icon7G.png"
+config/windows_native_icon="res://icon7G.ico"
 
 [autoload]
 
@@ -45,9 +47,17 @@ window/size/test_height=756
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[global]
+
+touch=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

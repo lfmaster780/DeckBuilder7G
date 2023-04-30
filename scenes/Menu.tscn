@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://fonts/static/SofiaSansCondensed-Light.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/botoes/fullscreen.png" type="Texture" id=5]
 [ext_resource path="res://themes/fileDiologTheme.tres" type="Theme" id=6]
+[ext_resource path="res://sprites/botoes/GitHub-Logo.png" type="Texture" id=7]
+[ext_resource path="res://sprites/botoes/botao7G.jpg" type="Texture" id=8]
+[ext_resource path="res://sprites/botoes/LOGO.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=2]
 size = 46
@@ -20,6 +24,10 @@ use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 40
 font_data = ExtResource( 2 )
 
@@ -92,6 +100,20 @@ margin_bottom = 128.0
 custom_fonts/font = SubResource( 8 )
 text = "Carregar Deck Salvo"
 
+[node name="CreditosButton" type="Button" parent="Botoes"]
+margin_top = 148.0
+margin_right = 709.0
+margin_bottom = 202.0
+custom_fonts/font = SubResource( 9 )
+text = "Créditos"
+
+[node name="SairButton" type="Button" parent="Botoes"]
+margin_top = 222.0
+margin_right = 709.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 9 )
+text = "Sair"
+
 [node name="NovoDeckContainer" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 1375.0
@@ -151,10 +173,48 @@ mode = 0
 access = 2
 filters = PoolStringArray( "*.deck" )
 
+[node name="FullScreenButton" type="Button" parent="."]
+anchor_left = 0.79
+anchor_top = 0.009
+anchor_right = 0.828
+anchor_bottom = 0.059
+margin_left = 13.2
+margin_top = 0.28
+margin_right = 0.239868
+margin_bottom = 0.279995
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Pagina7GButton" type="TouchScreenButton" parent="."]
+position = Vector2( 41, 897 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 8 )
+
+[node name="GitButton" type="TouchScreenButton" parent="."]
+position = Vector2( 1664, 901 )
+scale = Vector2( 0.07, 0.07 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
+
+[node name="AnuButton" type="TouchScreenButton" parent="."]
+position = Vector2( 226, 874 )
+scale = Vector2( 0.12, 0.12 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 9 )
+
 [connection signal="pressed" from="Botoes/NovoDeckButton" to="." method="_on_NovoDeckButton_pressed"]
 [connection signal="pressed" from="Botoes/ContinuarButton" to="." method="_on_ContinuarButton_pressed"]
 [connection signal="pressed" from="Botoes/CarregarButton" to="." method="_on_CarregarButton_pressed"]
+[connection signal="pressed" from="Botoes/CreditosButton" to="." method="_on_CreditosButton_pressed"]
+[connection signal="pressed" from="Botoes/SairButton" to="." method="_on_SairButton_pressed"]
 [connection signal="text_changed" from="NovoDeckContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonGaia" to="." method="_on_ButtonGaia_pressed"]
 [connection signal="pressed" from="NovoDeckContainer/ButtonStroj" to="." method="_on_ButtonStroj_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
+[connection signal="pressed" from="Pagina7GButton" to="." method="_on_Pagina7GButton_pressed"]
+[connection signal="pressed" from="GitButton" to="." method="_on_GitButton_pressed"]
+[connection signal="pressed" from="AnuButton" to="." method="_on_AnuButton_pressed"]

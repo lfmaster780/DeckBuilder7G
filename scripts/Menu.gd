@@ -72,3 +72,27 @@ func _on_FileDialog_file_selected(path):
 	print("Arquivo: ",path)
 	DeckController.carregar(path)
 	get_tree().change_scene("res://scenes/Tela Deck.tscn")
+
+
+func _on_FullScreenButton_pressed():
+	OS.window_fullscreen = not OS.window_fullscreen
+
+
+func _on_Pagina7GButton_pressed():
+	OS.shell_open("https://sevengalaxiestcg.com")
+
+
+func _on_AnuButton_pressed():
+	OS.shell_open("https://www.instagram.com/anugamestudio/")
+
+
+func _on_GitButton_pressed():
+	OS.shell_open("https://github.com/lfmaster780/DeckBuilder7G")
+
+
+func _on_SairButton_pressed():
+	get_tree().quit()
+
+
+func _on_CreditosButton_pressed():
+	get_tree().change_scene("res://scenes/TelaCreditos.tscn")

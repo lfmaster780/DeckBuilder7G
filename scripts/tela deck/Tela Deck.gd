@@ -190,3 +190,7 @@ func salvar():
 func _on_FileDialog_dir_selected(dir):
 	print(dir)
 	DeckController.salvar(dir+"/")
+
+
+func _on_FullScreenButton_pressed():
+	OS.window_fullscreen = not OS.window_fullscreen
