@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Carta",
 "language": "GDScript",
 "path": "res://resources/cardDeck.gd"
+}, {
+"base": "Resource",
+"class": "Fortaleza",
+"language": "GDScript",
+"path": "res://resources/fortaleza.gd"
 } ]
 _global_script_class_icons={
 "Card": "",
-"Carta": ""
+"Carta": "",
+"Fortaleza": ""
 }
 
 [application]

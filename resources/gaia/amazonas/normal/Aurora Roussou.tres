@@ -11,7 +11,7 @@ Tipo = "Criatura"
 Filiacao = PoolStringArray( "Humano", "Amazona", "Guerreira" )
 CustoNivel = 2
 Efeitos = PoolStringArray( "Busque o \"Machado da Aurora\" em derrotados e acople neste card. Caso não esteja em derrotados, busque no deck, revele=o e coloque-o na mão. Embaralhe.", "Tem multiaque enquanto estiver equiapda com \"Machado da Aurora\"." )
-TipoEfeitos = PoolStringArray( "Instantâneo", "Infinito" )
+TipoEfeitos = PoolStringArray( "Instantâneo", "Permanente" )
 CustoEnergia = PoolIntArray( 1, 0 )
 Vida = 3
 Ataque = 3

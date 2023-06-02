@@ -1,0 +1,14 @@
+[gd_resource type="GDNativeLibrary" load_steps=3 format=2]
+
+[ext_resource path="res://resources/fortaleza.gd" type="Script" id=1]
+[ext_resource path="res://sprites/fortalezas/goldrons.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = "F1"
+Nome = "Zartrower"
+Efeitos = PoolStringArray( "Conceda 1 marcador de proteção de vida a um goldron aliado (o primeiro dano sofrido será ignorado e a criatura perderá 1 marcador) | Busque um goldron N1 no seu deck, revel-o e o coloque-o na mão." )
+TipoEfeitos = PoolStringArray( "Único" )
+CustoEnergia = PoolIntArray( 2 )
+Vida = 30
+textura = ExtResource( 2 )
