@@ -1,6 +1,8 @@
 
 # [Deck Builder 7G](https://github.com/lfmaster780/DeckBuilder7G)
 
+[![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
 O Deck Builder 7G é um App de código aberto, desenvolvido por Luís Filipe Santos Seixas, que possibilita a construção de Decks para o modo Padrão "União Galática" o jogo [Seven Galxies](https://loja.7guniverse.com/pagina/sobre-o-jogo.html). Permitindo que jogadores possam visualizar, adicionar e remover cartas do seu deck, e salvar a listagem para guardá-la e não perdê-la ou até mesmo compartilhar a listagem com outros jogadores.
 
 O App foi desenvolvido utilizando a **Godot Engine 3.5**, e atualmente está disponível para Windows.
