@@ -18,6 +18,8 @@ func _ready():
 	else:
 		inicializarDeckCarregado()
 		
+	iniciarFortaleza()
+		
 func _process(delta):
 	$VBoxContainerPagina/HBoxContainerPagina/LabelPagAtual.text = str(self.pagina + 1)
 	
@@ -194,3 +196,26 @@ func _on_FileDialog_dir_selected(dir):
 
 func _on_FullScreenButton_pressed():
 	OS.window_fullscreen = not OS.window_fullscreen
+
+
+func _on_ButtonFortaleza_pressed():
+	get_tree().change_scene("res://scenes/TelaFortaleza.tscn")
+
+func iniciarFortaleza():
+	$Fortaleza/Sprite.texture = DeckController.fortaleza.textura
+	
+	var texto = ""
+	for k in range(len(DeckController.fortaleza.Efeitos)):
+		texto += "[b]"+str(DeckController.fortaleza.CustoEnergia[k])+" | "
+		texto += DeckController.fortaleza.TipoEfeitos[k]+"[/b] \n"
+		texto += DeckController.fortaleza.Efeitos[k]
+		texto += "\n"
+		
+	$PopupFortaleza/Descricao.bbcode_text = "[fill]"+texto+"[/fill]"
+
+
+func _on_Area2D_mouse_entered():
+	$PopupFortaleza.visible = true
+
+func _on_AreaFortaleza_mouse_exited():
+	$PopupFortaleza.visible = false

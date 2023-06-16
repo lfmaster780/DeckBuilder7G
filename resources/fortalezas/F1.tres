@@ -7,7 +7,8 @@
 script = ExtResource( 1 )
 ID = "F1"
 Nome = "Zartrower"
-Efeitos = PoolStringArray( "Conceda 1 marcador de proteção de vida a um goldron aliado (o primeiro dano sofrido será ignorado e a criatura perderá 1 marcador) | Busque um goldron N1 no seu deck, revel-o e o coloque-o na mão." )
+Galaxia = "Stroj"
+Efeitos = PoolStringArray( "Escolha um: Conceda 1 marcador de proteção de vida a um goldron aliado (o primeiro dano sofrido será ignorado e a criatura perderá 1 marcador) | Busque um goldron N1 no seu deck, revel-o e o coloque-o na mão." )
 TipoEfeitos = PoolStringArray( "Único" )
 CustoEnergia = PoolIntArray( 2 )
 Vida = 30

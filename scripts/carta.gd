@@ -25,6 +25,11 @@ func _ready():
 		#$VerEspecialButton.visible = true
 	pass
 
+func _process(delta):
+	if DeckController.total >= 40:
+		$ButtonAdd.visible = false
+	
+
 func inicializar(index:int,filiacao:String):
 	#Seta a filiação da carta
 	self.filiacao = filiacao
@@ -99,4 +104,7 @@ func atualizar(mode = 1):
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	var i = 1
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		emit_signal("clicado",self.carta)
+		if $VerEspecialButton.pressed:
+			emit_signal("clicado",self.especial)
+		else:
+			emit_signal("clicado",self.carta)

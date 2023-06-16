@@ -44,6 +44,7 @@ func _on_ButtonGaia_pressed():
 		DeckController.novo()
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
 		DeckController.galaxia = "Gaia"
+		DeckController.fortaleza = CardsController.buscarFortalezaID("F2")
 		get_tree().change_scene("res://scenes/Tela Deck.tscn")
 
 
@@ -53,6 +54,7 @@ func _on_ButtonStroj_pressed():
 		DeckController.novo()
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
 		DeckController.galaxia = "Stroj"
+		DeckController.fortaleza = CardsController.buscarFortalezaID("F1")
 		get_tree().change_scene("res://scenes/Tela Deck.tscn")
 
 

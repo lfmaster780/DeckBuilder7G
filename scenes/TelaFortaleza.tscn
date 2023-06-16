@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://themes/optionTheme.tres" type="Theme" id=2]
+[ext_resource path="res://sprites/botoes/fullscreen.png" type="Texture" id=3]
+[ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/tela fortaleza/TelaFortaleza.gd" type="Script" id=5]
+[ext_resource path="res://sprites/fortalezas/amazonas.png" type="Texture" id=6]
+[ext_resource path="res://sprites/fortalezas/goldrons.png" type="Texture" id=7]
+[ext_resource path="res://sprites/gui/janela.png" type="Texture" id=8]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 46
+outline_size = 2
+outline_color = Color( 0.388235, 0.0117647, 0.345098, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="TelaFortaleza" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+
+[node name="ButtonVoltar" type="Button" parent="."]
+margin_left = 1734.0
+margin_top = 986.0
+margin_right = 1810.0
+margin_bottom = 1031.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Voltar"
+
+[node name="ButtonFullScreen" type="Button" parent="."]
+margin_left = 1530.0
+margin_top = 10.0
+margin_right = 1590.0
+margin_bottom = 64.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 3 )
+flat = true
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 72.0
+margin_right = 1920.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 2 )
+text = "Fortalezas Disponíveis"
+align = 1
+valign = 1
+
+[node name="Fortalezas" type="Node2D" parent="."]
+
+[node name="ActionButtonFortaleza" type="TextureButton" parent="Fortalezas"]
+margin_left = 80.0
+margin_top = 220.0
+margin_right = 1080.0
+margin_bottom = 936.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 7 )
+
+[node name="ActionButtonFortaleza2" type="TextureButton" parent="Fortalezas"]
+margin_left = 680.0
+margin_top = 220.0
+margin_right = 1680.0
+margin_bottom = 936.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+
+[node name="ActionButtonFortaleza3" type="TextureButton" parent="Fortalezas"]
+margin_left = 1280.0
+margin_top = 220.0
+margin_right = 2280.0
+margin_bottom = 936.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+
+[node name="FortalezaAtiva" type="Node2D" parent="."]
+
+[node name="Janela" type="Sprite" parent="FortalezaAtiva"]
+position = Vector2( 679.692, 1304.96 )
+rotation = 3.14159
+scale = Vector2( 1.45172, 1.06674 )
+texture = ExtResource( 8 )
+
+[node name="Descricao" type="RichTextLabel" parent="FortalezaAtiva"]
+margin_left = 478.0
+margin_top = 781.0
+margin_right = 1331.0
+margin_bottom = 1071.0
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+
+[node name="CardSprite" type="Sprite" parent="FortalezaAtiva"]
+position = Vector2( 222, 938 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="LabelSlecionada" type="Label" parent="FortalezaAtiva"]
+margin_left = 55.0
+margin_top = 770.0
+margin_right = 398.0
+margin_bottom = 792.0
+custom_fonts/font = SubResource( 5 )
+text = "Fortaleza Selecionada"
+align = 1
+
+[connection signal="pressed" from="ButtonVoltar" to="." method="_on_ButtonVoltar_pressed"]
+[connection signal="pressed" from="ButtonFullScreen" to="." method="_on_ButtonFullScreen_pressed"]
+[connection signal="pressed" from="Fortalezas/ActionButtonFortaleza" to="." method="_on_ActionButtonFortaleza_pressed"]
+[connection signal="pressed" from="Fortalezas/ActionButtonFortaleza2" to="." method="_on_ActionButtonFortaleza2_pressed"]
+[connection signal="pressed" from="Fortalezas/ActionButtonFortaleza3" to="." method="_on_ActionButtonFortaleza3_pressed"]

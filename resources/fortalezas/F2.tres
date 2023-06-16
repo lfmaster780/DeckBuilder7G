@@ -7,7 +7,8 @@
 script = ExtResource( 1 )
 ID = "F2"
 Nome = "Palácio das Amazonas"
-Efeitos = PoolStringArray( "Devolva uma amazona do seu campo para a mão e invoque outra de mesmo nível do lugar. | Escolha duas amazonas no seu campo." )
+Galaxia = "Gaia"
+Efeitos = PoolStringArray( "Escolha um: Devolva uma amazona do seu campo para a mão e invoque outra de mesmo nível do lugar. | Escolha duas amazonas no seu campo." )
 TipoEfeitos = PoolStringArray( "Único" )
 CustoEnergia = PoolIntArray( 2 )
 Vida = 30

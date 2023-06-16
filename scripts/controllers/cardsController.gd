@@ -8,6 +8,9 @@ var listaGaiaEspecial := []
 var listaStroj := [] 
 var listaStrojEspecial := []
 
+#Lista de Fortalezas
+var fortalezas
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Fazendo a leitura das cartas a partir dos Resources de cada uma delas
@@ -15,6 +18,7 @@ func _ready():
 	listaGaiaEspecial = loadItems("res://resources/gaia/amazonas/especial/")
 	listaStroj = loadItems("res://resources/stroj/goldrons/normal/")
 	listaStrojEspecial = loadItems("res://resources/stroj/goldrons/especial/")
+	fortalezas = loadItems("res://resources/fortalezas/")
 
 static func loadItems(folderPath : String) -> Array:
 	var item_files := []
@@ -45,3 +49,19 @@ func buscarID(id:int,lista) -> Card:
 			return elemento
 	
 	return null
+	
+func buscarFortalezaID(id : String):
+	for fortal in fortalezas:
+		if fortal.ID == id:
+			return fortal
+	
+	return null
+
+func buscarFortalezas(galaxia : String):
+	var lista = []
+	
+	for fortal in fortalezas:
+		if fortal.Galaxia.to_lower() == galaxia.to_lower():
+			lista.append(fortal)
+	
+	return lista

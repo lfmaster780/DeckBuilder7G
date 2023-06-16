@@ -4,6 +4,7 @@ var galaxia : String
 var deck := []
 var nome : String
 var total : int
+var fortaleza : Fortaleza
 
 func _ready():
 	novo()
@@ -90,11 +91,8 @@ func salvar(pathPersonalizado : String):
 		file.store_var(card.SuperVelocidade)
 		file.store_var(card.Teletransporte)
 		file.store_var(card.EspecialID)
-		#file.store_resource(card.textura)
-		#var buffer = card.textura.save("png")
-		#file.store_buffer(buffer)
 		
-	
+	file.store_var(fortaleza.ID)
 	file.close()
 	AppController.update()
 
@@ -160,6 +158,14 @@ func carregar(path : String):
 		carta.quantidade = qtd
 		
 		self.deck.append(carta)
+	var idFortaleza = file.get_var()
+	if idFortaleza != null:
+		self.fortaleza = CardsController.buscarFortalezaID(idFortaleza)
+	else:
+		if galaxia.to_lower() == "gaia":
+			self.fortaleza = CardsController.buscarFortalezaID("F2")
+		elif galaxia.to_lower() == "stroj":
+			self.fortaleza = CardsController.buscarFortalezaID("F1")
 	
 	file.close()
 		

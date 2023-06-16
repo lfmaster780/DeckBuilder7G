@@ -4,6 +4,7 @@ extends Resource
 
 export var ID : String
 export var Nome : String
+export var Galaxia : String
 export(PoolStringArray) var Efeitos := []
 export(PoolStringArray) var TipoEfeitos := []
 export(PoolIntArray) var CustoEnergia := []
