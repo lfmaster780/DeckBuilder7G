@@ -92,7 +92,7 @@ func _on_ButtonNovaMao_pressed():
 
 
 func _on_OptionButtonJogador_item_selected(index):
-	var selecionada = $OptionButtonJogador.get_index()
+	var selecionada = index
 	jogador = selecionada
 	resetar()
 	gerarMao()
