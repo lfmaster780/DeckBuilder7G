@@ -5,7 +5,7 @@
 
 O Deck Builder 7G é um App de código aberto, desenvolvido por Luís Filipe Santos Seixas, que possibilita a construção de Decks para o modo Padrão "União Galática" o jogo [Seven Galxies](https://loja.7guniverse.com/pagina/sobre-o-jogo.html). Permitindo que jogadores possam visualizar, adicionar e remover cartas do seu deck, e salvar a listagem para guardá-la e não perdê-la ou até mesmo compartilhar a listagem com outros jogadores.
 
-O App foi desenvolvido utilizando a **Godot Engine 3.5**, e atualmente está disponível para Windows.
+O App foi desenvolvido utilizando a **Godot Engine 3.5**, e atualmente está disponível para Windows e Linux.
 ![Criação de um deck da galáxia stroj no App](https://img.itch.zone/aW1hZ2UvMjA0MjgyMi8xMjAxNTkxMi5wbmc=/347x500/XQAxOh.png)      ![enter image description here](https://img.itch.zone/aW1hZ2UvMjA0MjgyMi8xMjAxNTkxNS5wbmc=/347x500/Qr/M+U.png)
 
 ## Lista de Colaboradores do Desenvolvimento
@@ -51,11 +51,13 @@ Para a Instalação, clique no [link para página do itch.io](https://anugamestu
 
 > Sempre matenha o DeckBuilder7G.exe e o DeckBuilder7G.pck na mesma pasta. Caso contrário o App não irá funcionar
 
-## Funcionalidades da Versão Atual (1.0)
+## Funcionalidades da Versão Atual (1.1)
 
  - Construção de Decks para o modo Padrão "União Galática", para galáxias Stroj e Gaia.
  - Salvar e Carregar Decks criados (assim como edição de decks já salvos anteriormente).
  - Visualização da Curva de Nível do Deck.
+ - Ver e Trocar Fortalezas
+ - Testar Mão Inicial dos Decks
 
 ## Colabore com este projeto
 Se gostou, por favor deixe uma ⭐ no projeto.
