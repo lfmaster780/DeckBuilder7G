@@ -38,7 +38,7 @@ func _on_ButtonFullScreen_pressed():
 
 
 func _on_ButtonVoltar_pressed():
-	get_tree().change_scene("res://scenes/Tela Deck.tscn")
+	get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 
 func _on_ActionButtonFortaleza_pressed():

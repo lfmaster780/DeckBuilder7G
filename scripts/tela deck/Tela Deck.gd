@@ -28,8 +28,10 @@ func _process(delta):
 		$HBoxContainerDeck/LabelTotal.text = str(total)
 		if total >= 30 and total <= 40:
 			$HBoxContainerDeck/LabelTotal.modulate = VERDE
+			$ButtonMao.visible = true
 		else:
 			$HBoxContainerDeck/LabelTotal.modulate = VERMELHO
+			$ButtonMao.visible = false
 	
 func adicao(card : Card):
 	var filhos = $Container.get_children()
@@ -219,3 +221,7 @@ func _on_Area2D_mouse_entered():
 
 func _on_AreaFortaleza_mouse_exited():
 	$PopupFortaleza.visible = false
+
+
+func _on_ButtonMao_pressed():
+	get_tree().change_scene("res://scenes/TelaMaoInicial.tscn")

@@ -1,0 +1,386 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://themes/fileDiologTheme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/botoes/arrow_back.png" type="Texture" id=2]
+[ext_resource path="res://sprites/botoes/arrow_forward.png" type="Texture" id=3]
+[ext_resource path="res://sprites/botoes/fullscreen.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/janela.png" type="Texture" id=5]
+[ext_resource path="res://sprites/fortalezas/amazonas.png" type="Texture" id=6]
+[ext_resource path="res://themes/optionTheme.tres" type="Theme" id=7]
+[ext_resource path="res://scenes/Stats.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Card.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/tela deck/Tela Deck.gd" type="Script" id=11]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Light.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://fonts/SofiaSansCondensed-VariableFont_wght.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/static/SofiaSansCondensed-Bold.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 26
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 26
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 495, 350 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 22
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 22
+use_filter = true
+font_data = ExtResource( 14 )
+
+[node name="Tela Deck" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="TituloJanelaStatus" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 46.0
+margin_right = 335.0
+margin_bottom = 156.0
+
+[node name="LabelGalaxia" type="Label" parent="TituloJanelaStatus"]
+margin_right = 331.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 6 )
+text = "Galáxia:"
+align = 1
+
+[node name="LabelNomeGalaxia" type="Label" parent="TituloJanelaStatus"]
+margin_top = 48.0
+margin_right = 331.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 7 )
+text = "GAIA"
+align = 1
+
+[node name="CardDestaque" type="Sprite" parent="."]
+position = Vector2( 76, 198 )
+scale = Vector2( 0.4, 0.4 )
+centered = false
+
+[node name="DescricaoLabel" type="RichTextLabel" parent="."]
+margin_top = 474.0
+margin_right = 350.0
+margin_bottom = 689.0
+custom_fonts/bold_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[fill]Para visualizar melhor a descrição de uma carta, clique nela ou passe o mouse por ela na listagem do deck[/fill]"
+text = "Para visualizar melhor a descrição de uma carta, clique nela ou passe o mouse por ela na listagem do deck"
+
+[node name="Stats" parent="." instance=ExtResource( 8 )]
+margin_left = 78.9999
+margin_top = 681.0
+margin_right = 78.9999
+margin_bottom = 681.0
+rect_scale = Vector2( 1.3, 1 )
+
+[node name="Background" parent="." instance=ExtResource( 9 )]
+z_index = -5
+
+[node name="Cards" type="Node2D" parent="." groups=["Cartas"]]
+position = Vector2( 5, -40 )
+
+[node name="Card" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 560, 345 )
+
+[node name="Card2" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 900, 345 )
+
+[node name="Card3" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 1240, 345 )
+
+[node name="Card4" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 560, 850 )
+
+[node name="Card5" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 900, 850 )
+
+[node name="Card6" parent="Cards" instance=ExtResource( 10 )]
+position = Vector2( 1240, 850 )
+
+[node name="Container" type="VBoxContainer" parent="."]
+margin_left = 1686.0
+margin_top = 59.0
+margin_right = 1917.0
+margin_bottom = 941.0
+custom_constants/separation = 22
+
+[node name="VBoxContainerNome" type="VBoxContainer" parent="."]
+margin_left = 1667.0
+margin_top = 3.0
+margin_right = 1918.0
+margin_bottom = 61.0
+
+[node name="LabelDeck" type="Label" parent="VBoxContainerNome"]
+margin_right = 266.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+text = "Deck:"
+align = 1
+
+[node name="LabelNomeDeck" type="Label" parent="VBoxContainerNome"]
+margin_top = 32.0
+margin_right = 266.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "Deck Amazonas Arqueiras do Lejes"
+align = 1
+
+[node name="CaixaBusca" type="LineEdit" parent="."]
+visible = false
+margin_left = 427.0
+margin_top = 11.0
+margin_right = 1388.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 2 )
+text = "PESQUISAR"
+
+[node name="HBoxContainerDeck" type="HBoxContainer" parent="."]
+margin_left = 1662.0
+margin_top = 962.0
+margin_right = 1920.0
+margin_bottom = 1002.0
+custom_constants/separation = 4
+alignment = 1
+
+[node name="LabelTamaho" type="Label" parent="HBoxContainerDeck"]
+margin_left = 53.0
+margin_top = 6.0
+margin_right = 190.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 3 )
+text = "Total de Cards:"
+
+[node name="LabelTotal" type="Label" parent="HBoxContainerDeck"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 194.0
+margin_top = 6.0
+margin_right = 204.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 5 )
+text = "0"
+
+[node name="VBoxContainerPagina" type="VBoxContainer" parent="."]
+margin_left = 1438.0
+margin_top = 972.0
+margin_right = 1571.0
+margin_bottom = 1044.0
+
+[node name="HBoxContainerPagina" type="HBoxContainer" parent="VBoxContainerPagina"]
+margin_right = 133.0
+margin_bottom = 27.0
+custom_constants/separation = 4
+alignment = 1
+
+[node name="LabelTituloPagina" type="Label" parent="VBoxContainerPagina/HBoxContainerPagina"]
+margin_left = 16.0
+margin_right = 79.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 3 )
+text = "Página:"
+
+[node name="LabelPagAtual" type="Label" parent="VBoxContainerPagina/HBoxContainerPagina"]
+margin_left = 83.0
+margin_right = 93.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
+text = "0"
+
+[node name="LabelBarra" type="Label" parent="VBoxContainerPagina/HBoxContainerPagina"]
+margin_left = 97.0
+margin_right = 103.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
+text = "/"
+
+[node name="LabelPagFinal" type="Label" parent="VBoxContainerPagina/HBoxContainerPagina"]
+margin_left = 107.0
+margin_right = 117.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
+text = "0"
+
+[node name="HBoxContainerBotoes" type="HBoxContainer" parent="VBoxContainerPagina"]
+margin_top = 31.0
+margin_right = 133.0
+margin_bottom = 61.0
+alignment = 1
+
+[node name="ButtonPrevious" type="Button" parent="VBoxContainerPagina/HBoxContainerBotoes"]
+margin_left = 28.0
+margin_right = 64.0
+margin_bottom = 30.0
+icon = ExtResource( 2 )
+icon_align = 1
+
+[node name="ButtonNext" type="Button" parent="VBoxContainerPagina/HBoxContainerBotoes"]
+margin_left = 68.0
+margin_right = 104.0
+margin_bottom = 30.0
+icon = ExtResource( 3 )
+icon_align = 1
+
+[node name="HBoxContainerOpções" type="HBoxContainer" parent="."]
+margin_left = 1662.0
+margin_top = 999.0
+margin_right = 1920.0
+margin_bottom = 1039.0
+alignment = 1
+
+[node name="ButtonSalvar" type="Button" parent="HBoxContainerOpções"]
+margin_left = 71.0
+margin_right = 127.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Salvar"
+
+[node name="ButtonMenu" type="Button" parent="HBoxContainerOpções"]
+margin_left = 131.0
+margin_right = 187.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Voltar"
+
+[node name="JanelaStats" type="Sprite" parent="."]
+position = Vector2( 128, 554.5 )
+scale = Vector2( 0.5, 0.973148 )
+z_index = -4
+texture = ExtResource( 5 )
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 1012.0
+margin_top = 381.0
+margin_right = 1712.0
+margin_bottom = 897.0
+theme = ExtResource( 1 )
+window_title = "Selecione a Pasta que Deseja Salvar o Deck"
+mode_overrides_title = false
+mode = 2
+access = 2
+filters = PoolStringArray( "*.deck" )
+
+[node name="FullScreenButton" type="Button" parent="."]
+margin_left = 1530.0
+margin_top = 10.0
+margin_right = 1590.0
+margin_bottom = 64.0
+focus_mode = 0
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Fortaleza" type="Node2D" parent="."]
+position = Vector2( 1539, 803 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Fortaleza"]
+position = Vector2( -30, 88 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="AreaFortaleza" type="Area2D" parent="Fortaleza/Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fortaleza/Sprite/AreaFortaleza"]
+shape = SubResource( 11 )
+
+[node name="ButtonFortaleza" type="Button" parent="."]
+margin_left = 1435.0
+margin_top = 769.0
+margin_right = 1587.0
+margin_bottom = 807.0
+custom_fonts/font = SubResource( 10 )
+text = "Trocar Fortaleza"
+
+[node name="PopupFortaleza" type="PopupDialog" parent="."]
+margin_left = 1060.0
+margin_top = 570.0
+margin_right = 1755.0
+margin_bottom = 760.0
+
+[node name="Descricao" type="RichTextLabel" parent="PopupFortaleza"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 687.0
+margin_bottom = 184.0
+custom_fonts/bold_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 13 )
+bbcode_enabled = true
+bbcode_text = "2 | Unico
+Escolha um: Conceda 1 marcador de proteção de vida a um goldron aliado (o primeiro dano sofrido será ignorado e a criatura perderá 1 marcador) | Busque um goldron N1 no seu deck, revel-o e o coloque-o na mão."
+text = "2 | Unico
+Escolha um: Conceda 1 marcador de proteção de vida a um goldron aliado (o primeiro dano sofrido será ignorado e a criatura perderá 1 marcador) | Busque um goldron N1 no seu deck, revel-o e o coloque-o na mão."
+
+[node name="ButtonMao" type="Button" parent="."]
+visible = false
+margin_left = 1435.0
+margin_top = 521.0
+margin_right = 1597.0
+margin_bottom = 559.0
+theme = ExtResource( 7 )
+text = "Testar Mão Inicial"
+
+[connection signal="pressed" from="VBoxContainerPagina/HBoxContainerBotoes/ButtonPrevious" to="." method="_on_ButtonPrevious_pressed"]
+[connection signal="pressed" from="VBoxContainerPagina/HBoxContainerBotoes/ButtonNext" to="." method="_on_ButtonNext_pressed"]
+[connection signal="pressed" from="HBoxContainerOpções/ButtonSalvar" to="." method="salvar"]
+[connection signal="pressed" from="HBoxContainerOpções/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
+[connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
+[connection signal="mouse_entered" from="Fortaleza/Sprite/AreaFortaleza" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Fortaleza/Sprite/AreaFortaleza" to="." method="_on_AreaFortaleza_mouse_exited"]
+[connection signal="pressed" from="ButtonFortaleza" to="." method="_on_ButtonFortaleza_pressed"]
+[connection signal="pressed" from="ButtonMao" to="." method="_on_ButtonMao_pressed"]

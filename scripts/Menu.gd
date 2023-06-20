@@ -45,7 +45,7 @@ func _on_ButtonGaia_pressed():
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
 		DeckController.galaxia = "Gaia"
 		DeckController.fortaleza = CardsController.buscarFortalezaID("F2")
-		get_tree().change_scene("res://scenes/Tela Deck.tscn")
+		get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 
 func _on_ButtonStroj_pressed():
@@ -55,7 +55,7 @@ func _on_ButtonStroj_pressed():
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
 		DeckController.galaxia = "Stroj"
 		DeckController.fortaleza = CardsController.buscarFortalezaID("F1")
-		get_tree().change_scene("res://scenes/Tela Deck.tscn")
+		get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 
 func _on_LineEdit_text_changed(new_text):
@@ -63,7 +63,7 @@ func _on_LineEdit_text_changed(new_text):
 
 
 func _on_ContinuarButton_pressed():
-	get_tree().change_scene("res://scenes/Tela Deck.tscn")
+	get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 
 func _on_CarregarButton_pressed():
@@ -73,7 +73,7 @@ func _on_CarregarButton_pressed():
 func _on_FileDialog_file_selected(path):
 	print("Arquivo: ",path)
 	DeckController.carregar(path)
-	get_tree().change_scene("res://scenes/Tela Deck.tscn")
+	get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 
 func _on_FullScreenButton_pressed():
