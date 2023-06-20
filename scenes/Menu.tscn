@@ -75,6 +75,9 @@ anchor_bottom = 1.0
 margin_left = 614.0
 margin_top = 320.0
 margin_right = -597.0
+focus_next = NodePath("NovoDeckButton")
+focus_previous = NodePath("SairButton")
+focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 custom_constants/separation = 20
@@ -82,6 +85,8 @@ custom_constants/separation = 20
 [node name="NovoDeckButton" type="Button" parent="Botoes"]
 margin_right = 709.0
 margin_bottom = 54.0
+focus_next = NodePath("../ContinuarButton")
+focus_previous = NodePath("../SairButton")
 custom_fonts/font = SubResource( 3 )
 text = "Novo Deck"
 
@@ -90,6 +95,8 @@ visible = false
 margin_top = 74.0
 margin_right = 709.0
 margin_bottom = 128.0
+focus_next = NodePath("../CarregarButton")
+focus_previous = NodePath("../NovoDeckButton")
 custom_fonts/font = SubResource( 8 )
 text = "Continuar Deck Atual"
 
@@ -97,6 +104,8 @@ text = "Continuar Deck Atual"
 margin_top = 74.0
 margin_right = 709.0
 margin_bottom = 128.0
+focus_next = NodePath("../CreditosButton")
+focus_previous = NodePath("../ContinuarButton")
 custom_fonts/font = SubResource( 8 )
 text = "Carregar Deck Salvo"
 
@@ -104,6 +113,8 @@ text = "Carregar Deck Salvo"
 margin_top = 148.0
 margin_right = 709.0
 margin_bottom = 202.0
+focus_next = NodePath("../SairButton")
+focus_previous = NodePath("../CarregarButton")
 custom_fonts/font = SubResource( 9 )
 text = "Créditos"
 
@@ -111,6 +122,8 @@ text = "Créditos"
 margin_top = 222.0
 margin_right = 709.0
 margin_bottom = 276.0
+focus_next = NodePath("../NovoDeckButton")
+focus_previous = NodePath("../CreditosButton")
 custom_fonts/font = SubResource( 9 )
 text = "Sair"
 
