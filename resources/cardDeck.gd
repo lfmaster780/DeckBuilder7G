@@ -1,5 +1,5 @@
 class_name Carta
-
+#Classe para representar as cartas quando adicionadas no Deck
 extends Resource
 
 var card : Card

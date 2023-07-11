@@ -1,6 +1,6 @@
 class_name Fortaleza
 extends Resource
-
+#Classe que representa as cartas de fortaleza
 
 export var ID : String
 export var Nome : String

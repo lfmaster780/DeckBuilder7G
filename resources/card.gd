@@ -1,6 +1,6 @@
 class_name Card
 extends Resource
-
+#Classe para representar em codigo as cartas do jogo
 
 export var ID : int
 export var Nome : String

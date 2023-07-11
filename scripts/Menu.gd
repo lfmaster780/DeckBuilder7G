@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+#GALAXIA DEPENDENTE
 const VERMELHO = Color(255,0,0,1)
 const VERDE = Color(0,255,0,1)
 
@@ -39,7 +39,7 @@ func _on_NovoDeckButton_pressed():
 
 
 func _on_ButtonGaia_pressed():
-	#Depois que possivel salvar, checar se o nome é válido
+	#Checar se o nome é válido, e so assim criar o novo deck
 	if validarNome():
 		DeckController.novo()
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
@@ -49,7 +49,7 @@ func _on_ButtonGaia_pressed():
 
 
 func _on_ButtonStroj_pressed():
-	#Depois que possivel salvar, checar se o nome é válido
+	#Checar se o nome é válido, e so assim criar o novo deck
 	if validarNome():
 		DeckController.novo()
 		DeckController.nome = $NovoDeckContainer/LineEdit.text
@@ -57,6 +57,23 @@ func _on_ButtonStroj_pressed():
 		DeckController.fortaleza = CardsController.buscarFortalezaID("F1")
 		get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
+func _on_ButtonMajik_pressed():
+	#Checar se o nome é válido, e so assim criar o novo deck
+	if validarNome():
+		DeckController.novo()
+		DeckController.nome = $NovoDeckContainer/LineEdit.text
+		DeckController.galaxia = "Majik"
+		DeckController.fortaleza = CardsController.buscarFortalezaID("")
+		get_tree().change_scene("res://scenes/TelaDeck.tscn")
+
+func _on_ButtonAdroit_pressed():
+	#Checar se o nome é válido, e so assim criar o novo deck
+	if validarNome():
+		DeckController.novo()
+		DeckController.nome = $NovoDeckContainer/LineEdit.text
+		DeckController.galaxia = "Adroit"
+		DeckController.fortaleza = CardsController.buscarFortalezaID("")
+		get_tree().change_scene("res://scenes/TelaDeck.tscn")
 
 func _on_LineEdit_text_changed(new_text):
 	validarNome()
@@ -98,3 +115,4 @@ func _on_SairButton_pressed():
 
 func _on_CreditosButton_pressed():
 	get_tree().change_scene("res://scenes/TelaCreditos.tscn")
+	

@@ -1,5 +1,5 @@
 extends Node2D
-
+#GALAXIA DEPENDENTE
 
 var carta : Card
 var filiacao : String
@@ -41,8 +41,12 @@ func inicializar(index:int,filiacao:String):
 		#Se tiver, é feita a checagem de filiacao | carrega os dados e torna botao de card especial visivel
 		if filiacao.to_upper() == "STROJ":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
-		else:
+		elif filiacao.to_upper() == "GAIA":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
+		elif filiacao.to_upper() == "MAJIK":
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaMajikEspecial)
+		elif filiacao.to_upper() == "ADROIT":
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaAdroitEspecial)
 		$VerEspecialButton.visible = true
 
 #Funcao ativada quando o botão de ver card especial é pressionado
@@ -55,13 +59,13 @@ func _on_VerEspecialButton_toggled(button_pressed):
 
 
 func _on_ButtonRetirar_pressed():
-	var result = int($LabelQuantidade.text) - 1
+	#Faz a retirada chamando o pai do no pai que sera o Node2D "Tela Deck"
 	get_parent().get_parent().retirar(carta)
 	atualizar()
 
 
 func _on_ButtonAdd_pressed():
-	var result = int($LabelQuantidade.text) + 1
+	#Faz a adicao chamando o metodo do pai do no pai que sera o Node2D "Tela Deck"
 	get_parent().get_parent().adicao(carta)
 	atualizar()
 	
@@ -75,7 +79,7 @@ func atualizar(mode = 1):
 	if self.carta == null:
 		return
 	self.visible = true
-	
+	#Atualizacao das informacoes
 	$LabelQuantidade.text = str(DeckController.quantidade(carta))
 	$CardSprite.texture = carta.textura
 	filiacao = DeckController.galaxia
@@ -91,20 +95,29 @@ func atualizar(mode = 1):
 		$ButtonAdd.visible = false
 	
 	if carta.EspecialID > 0:
-		#Se tiver, é feita a checagem de filiacao | carrega os dados e torna botao de card especial visivel
+		#Se tiver, é feita a checagem de filiacao (galaxia) | carrega os dados e torna botao de card especial visivel
 		if filiacao.to_upper() == "STROJ":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaStrojEspecial)
 		elif filiacao.to_upper() == "GAIA":
 			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaGaiaEspecial)
+		elif filiacao.to_upper() == "MAJIK":
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaMajikEspecial)
+		elif filiacao.to_upper() == "ADROIT":
+			especial = CardsController.buscarID(carta.EspecialID,CardsController.listaAdroitEspecial)
 		$VerEspecialButton.visible = true
 	else:
 		$VerEspecialButton.visible = false
 
+func deselecionarEspecial():
+	$VerEspecialButton.pressed = false
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	#Quando uma carta for clicada era emitira o sinal para ser destacada na lateral da tela
 	var i = 1
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		#Se a carta estiver mostrando a carta especial relacionada, destaca a especial
 		if $VerEspecialButton.pressed:
 			emit_signal("clicado",self.especial)
+		#Caso contrario destaca a carta normal
 		else:
 			emit_signal("clicado",self.carta)

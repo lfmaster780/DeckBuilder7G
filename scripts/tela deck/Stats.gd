@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	atualizar()
 	total = float(DeckController.total)
-	
+	#sempre multiplicado por 100 para ficar em porcentagem como pede o atributo value
 	if DeckController.total > 0:
 		$TextureProgress0.value = (n0/total)*100
 		$TextureProgress1.value = (n1/total)*100
@@ -24,6 +24,11 @@ func _process(delta):
 		$TextureProgress1.value = n1
 		$TextureProgress2.value = n2
 		$TextureProgress3.value = n3
+		
+	$Quantidades/N0.text = str(n0)
+	$Quantidades/N1.text = str(n1)
+	$Quantidades/N2.text = str(n2)
+	$Quantidades/N3.text = str(n3)
 	
 func atualizar():
 	if DeckController.deck.size() < 1:

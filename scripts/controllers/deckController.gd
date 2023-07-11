@@ -1,5 +1,5 @@
 extends Node
-
+#GALAXIA DEPENDENTE
 var galaxia : String
 var deck := []
 var nome : String
@@ -148,6 +148,10 @@ func carregar(path : String):
 			img = CardsController.buscarID(card.ID,CardsController.listaGaia)
 		elif galaxia.to_lower() == "stroj":
 			img = CardsController.buscarID(card.ID,CardsController.listaStroj)
+		elif galaxia.to_lower() == "majik":
+			img = CardsController.buscarID(card.ID,CardsController.listaMajik)
+		elif galaxia.to_lower() == "adroit":
+			img = CardsController.buscarID(card.ID,CardsController.listaAdroit)
 		else:
 			print_debug("Galaxia inexistente no momento")
 		
@@ -166,6 +170,10 @@ func carregar(path : String):
 			self.fortaleza = CardsController.buscarFortalezaID("F2")
 		elif galaxia.to_lower() == "stroj":
 			self.fortaleza = CardsController.buscarFortalezaID("F1")
+		elif galaxia.to_lower() == "majik":
+			self.fortaleza = CardsController.buscarFortalezaID("")
+		elif galaxia.to_lower() == "adroit":
+			self.fortaleza = CardsController.buscarFortalezaID("")
 	
 	file.close()
 		
