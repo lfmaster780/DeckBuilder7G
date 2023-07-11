@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 ID = 44
 Nome = "Therkoj"
-Tipo = "Criaturas"
+Tipo = "Criatura"
 Filiacao = PoolStringArray( "Robô", "Goldron", "Manipulador", "Guerrilheiro" )
 CustoNivel = 2
 Efeitos = PoolStringArray( "Depois de invocar um goldron manipulador no seu campo, este efeito pode ser ativado. Therkoj ganha 1 marcador de proteção de vida (o primeiro dano sofrido será ignorado e esta criatura perderá 1 marcador)." )
