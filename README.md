@@ -47,17 +47,18 @@ Para a Instalação, clique no [link para página do itch.io](https://anugamestu
  2. Se desejar escolha o valro da doação, ou apenas clique em **No thanks, just take me to the downloads**.
  3. Escolha a Versão que desejar baixar e clique em Download.
  4. Extraia o conteúdo do `.zip` em uma pasta do seu computador a sua escolha.
- 5. Abra o executável `DeckBuilder7G.exe` e aproveite
+ 5. Abra o executável `DeckBuilder7G.exe`(Windows) ou `7gdeckbuilder.x86_64`(Linux) e aproveite.
 
 > Sempre matenha o DeckBuilder7G.exe e o DeckBuilder7G.pck na mesma pasta. Caso contrário o App não irá funcionar
 
-## Funcionalidades da Versão Atual (1.1)
+## Funcionalidades da Versão Atual (1.2)
 
  - Construção de Decks para o modo Padrão "União Galática", para galáxias Stroj e Gaia.
  - Salvar e Carregar Decks criados (assim como edição de decks já salvos anteriormente).
  - Visualização da Curva de Nível do Deck.
  - Ver e Trocar Fortalezas
  - Testar Mão Inicial dos Decks
+ - Visualização da Listagem do Deck (Agora em Ordem Alfabética)
 
 ## Colabore com este projeto
 Se gostou, por favor deixe uma ⭐ no projeto.
